@@ -4,7 +4,8 @@
 
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
-
+    <script type="text/javascript" src="widgets/Tracktatus/js/tracktatus.js"></script>
+    
     
     <title>Renato Leme</title>
 
@@ -29,6 +30,7 @@
           color: white;
       }
       .widget {
+          padding: 4px;
           margin: 10px;
           background: black;
           color: white;
@@ -71,6 +73,28 @@
       .social {
           color: white;
       }
+
+      
+      .animation {
+          animation-duration: 2s;
+          animation-name: slidein;
+      }
+      
+      @keyframes slidein {
+          from {
+              margin-left: 50%;
+              width: 50%;
+              opacity: 0;
+          }
+          
+          to {
+              margin-left: 0%;
+              width: 100%;
+              opacity: 1;
+          }
+      }
+      
+      
     </style>
     
   </head>
@@ -80,16 +104,18 @@
     <div class="box">
       <div class="page-head">
 
-        <div class="selectors">
-          <i class="fas fa-sync-alt"></i>
-        </div>
+
+        
+          <div class="selectors">
+            <a href="https://github.com/renatoleme" class="social"><i class="btn fab fa-github fa-2x"></i></a>
+          </div>
         
         
         <div class="name">
           
           
           <center>
-            <img class="avatar" src="eu.jpg" />
+            <img class="avatar" src="img/eu.jpg" />
             
             
             <h1>Renato Leme</h1>
@@ -106,18 +132,18 @@
             </center>
             
 
-                <div class="widget">
+            <div class="widget">
 
+                <div class="selectors">
+                  <i class="fas fa-sync-alt" onclick="genTlp();"></i>
+                </div>
 
-          <center>
-          <p class="epigraph"><i>"Die Form ist die Möglichkeit der Struktur."  </i> (Tractatus, 2.033)</p>
-          </center>
+                  <center>
+                      <p id="tlp" class="animation" />
+                  </center>
 
                 </div>
 
-          <center>
-            <a href="https://github.com/renatoleme" class="social"><i class="btn fab fa-github fa-2x"></i></a>
-          </center>
         </div>
         <div class="about-me">
           
