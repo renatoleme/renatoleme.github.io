@@ -1,10 +1,13 @@
 <html>
   <head>
+    <meta charset="UTF-8" />
     <title>Renato Leme</title>
     <meta name="description" content="Estudante de Doutorado no IFCH/CLE (Unicamp). Atualmente trabalhando com desenvolvimento de sistemas automatizados de prova.">
     <meta name="author" content="Renato Leme">
     <link rel="stylesheet" href="assets/styles.css" />
+    <link rel="stylesheet" href="widgets/tracktatus/assets/styles.css" />
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="https://unpkg.com/vue@next"></script>
   </head>
   
   <body>
@@ -39,5 +42,9 @@
       </div>
     </div>
 
+ l   <script src="widgets/tracktatus/main.js"></script>
+    <script>
+          Vue.createApp(Tracktatus).mount('#tlp-widget')
+    </script>
   </body>
 </html>
