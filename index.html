@@ -1,173 +1,50 @@
 <html>
-  
   <head>
-
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-
-    <script type="text/javascript" src="widgets/tracktatus/js/tracktatus.js"></script>
-    
-    
+    <meta charset="UTF-8" />
     <title>Renato Leme</title>
-
     <meta name="description" content="Estudante de Doutorado no IFCH (Unicamp). Atualmente trabalhando com desenvolvimento de sistemas automatizados de prova.">
     <meta name="author" content="Renato Leme">
-  
-    
-    <style>
-      body {
-          background: #303030;
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-      }
-      .box {
-          margin: 0;
-          position: absolute;
-          top: 50%;
-          -ms-transform: translateY(-50%);
-          transform: translateY(-50%);
-      }
-      .page-head {
-          margin: 10px;
-          padding: 10px;
-          background: darkred;
-          color: white;
-      }
-      .widget {
-          padding: 4px;
-          margin: 30px;
-          background: black;
-          color: white;
-      }
-      .about-me {
-          margin: 10px;
-          padding: 10px;
-          background: lightgray;
-      }
-      .epigraph {
-          justify-self: center;
-      }
-      .avatar {
-          vertical-align: middle;
-          width: 90px;
-          height: 90px;
-          object-fit: cover;
-          border-radius: 50%;
-          box-shadow: 0 0 1em gold;
-      }
-      .avatar:hover {
-          box-shadow: 0 0 1em red;
-      }
-      .selectors {
-          display: flex;
-          justify-content: flex-end;
-      }
-      .fas:active {
-          transform: rotate(360deg);
-          transition-duration: 0.5s;
-          transition-property: transform;
-      }
-      .btn {
-          padding: 4px;
-      }
-      .btn:hover {
-          cursor: pointer;
-          color: gray;
-      }
-      .social {
-          color: white;
-      }
-
-      
-      .animation {
-          animation-duration: 2s;
-          animation-name: slidein;
-      }
-      
-      @keyframes slidein {
-          from {
-              margin-left: 50%;
-              width: 50%;
-              opacity: 0;
-          }
-          
-          to {
-              margin-left: 0%;
-              width: 100%;
-              opacity: 1;
-          }
-      }
-      
-      
-    </style>
-    
+    <link rel="stylesheet" href="assets/styles.css" />
+    <link rel="stylesheet" href="widgets/tracktatus/assets/styles.css" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <script src="https://unpkg.com/vue@next"></script>
   </head>
   
   <body>
-    
     <div class="box">
-      <div class="page-head">
-
-
-        
-          <div class="selectors">
-            <a href="https://github.com/renatoleme" class="social"><i class="btn fab fa-github fa-2x"></i></a>
-          </div>
-        
-        
+      <div class="page-head">  
+        <div class="selectors">
+          <a href="https://github.com/renatoleme" class="social"><i class="btn fab fa-github fa-2x"></i></a>
+        </div>
         <div class="name">
-          
-          
           <center>
             <img class="avatar" src="img/eu.jpg" />
-            
-            
             <h1>Renato Leme</h1>
-
-            
           </center>
-          
-
-          </div>
-          
-            
-            <center>
-              <i>Philosopher && Programmer</i>
-            </center>
-            
-
-            <div class="widget">
-
-                <div class="selectors">
-                  <i class="fas fa-sync-alt" onclick="genTlp();"></i>
-                </div>
-
-                  <center>
-                      <p id="tlp" class="animation" />
-                  </center>
-
-                </div>
-
         </div>
-        <div class="about-me">
+        <center>
+          <i>Philosopher && Programmer</i>
+        </center>
+        <center>
+          <div id="tlp-widget" /> 
+        </center>
+      </div>
+      <div class="about-me">
+        <h2> About me </h2>
+        <p>
+          I love machines and I like to philosophize about then. <br/>
+          Currently I'm pursuing my PhD at <a href="https://www.ifch.unicamp.br/ifch/pos/filosofia">Unicamp (IFCH/CLE)</a> [Campinas, Brazil]
+          in the area of Logics, with a research project on diagrammatic reasoning.
           
-          <h2> About me </h2>
-          <p>
-            I love machines and I like to philosophize about then. <br/>
-            Currently I'm pursuing my PhD at <a href="https://www.ifch.unicamp.br/ifch/pos/filosofia">Unicamp (IFCH/CLE)</a> [Campinas, Brazil]
-            in the area of Logics, with a research project on diagrammatic reasoning.
-            
-            <br /> <br />
-            You can contact me via rntreisleme [at] gmail.com .
-          </p>
-          
-          
-        </div>
-        
+          <br /> <br />
+          You can contact me via rntreisleme [at] gmail.com .
+        </p>
+      </div>
     </div>
-    
-    
-    
+
+    <script src="widgets/tracktatus/main.js"></script>
+    <script>
+          Vue.createApp(Tracktatus).mount('#tlp-widget')
+    </script>
   </body>
-  
 </html>

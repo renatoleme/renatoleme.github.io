@@ -1,0 +1,64 @@
+body {
+    background: #303030;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.box {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+.page-head {
+    margin: 10px;
+    padding: 10px;
+    background: darkred;
+    color: white;
+}
+.widget {
+    padding: 4px;
+    margin: 30px;
+    background: black;
+    color: white;
+}
+.about-me {
+    margin: 10px;
+    padding: 10px;
+    background: lightgray;
+}
+.epigraph {
+    justify-self: center;
+}
+.avatar {
+    vertical-align: middle;
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 0 1em gold;
+}
+.avatar:hover {
+    box-shadow: 0 0 1em red;
+}
+.selectors {
+    display: flex;
+    justify-content: flex-end;
+}
+.fas:active {
+    transform: rotate(360deg);
+    transition-duration: 0.5s;
+    transition-property: transform;
+}
+.btn {
+    padding: 4px;
+}
+.btn:hover {
+    cursor: pointer;
+    color: gray;
+}
+.social {
+    color: white;
+}
+
