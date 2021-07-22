@@ -1,37 +1,43 @@
+
+
 body {
-    background: #303030;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    background-color: #303030;
+
 }
 .box {
-    margin: 0;
+    width: 500px;
+    margin: 0px;
     position: absolute;
     top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 .page-head {
-    margin: 10px;
     padding: 10px;
     background: darkred;
     color: white;
+    box-shadow: 4px 4px 16px 0 black;
 }
+
 .widget {
     padding: 4px;
-    margin: 30px;
-    background: black;
+    background: transparent;
     color: white;
+    flex-grow: 1;
+    position: absolute;
 }
-.about-me {
-    margin: 10px;
-    padding: 10px;
+.content {
     background: lightgray;
-}
-.epigraph {
-    justify-self: center;
+    padding: 16px;
+    box-shadow: 4px 4px 16px 0 black;
+    margin-bottom: 20px;
+    text-align: justify;
+    text-justify: inter-word;
+
 }
 .avatar {
+    z-index: 10;
     vertical-align: middle;
     width: 90px;
     height: 90px;
