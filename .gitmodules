@@ -4,3 +4,6 @@
 [submodule "widgets/tracktatus"]
 	path = widgets/tracktatus
 	url = https://github.com/renatoleme/tracktatus
+[submodule "widgets/vtasks"]
+	path = widgets/vtasks
+	url = git@github.com:renatoleme/vtasks.git

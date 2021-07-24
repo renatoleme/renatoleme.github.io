@@ -1,0 +1,10 @@
+app.component('vcontext', {
+    data() {
+
+    },
+    methods: {
+        openMenu(event) {
+            console.log(event)
+        }
+    }
+})

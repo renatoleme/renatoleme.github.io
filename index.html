@@ -4,20 +4,35 @@
     <title>Renato Leme</title>
     <meta name="description" content="Estudante de Doutorado no IFCH/CLE (Unicamp). Atualmente trabalhando com desenvolvimento de sistemas automatizados de prova.">
     <meta name="author" content="Renato Leme">
-    <link rel="stylesheet" href="assets/styles.css" />
+    <script src="https://unpkg.com/vue@next"></script>
+    
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="widgets/tracktatus/assets/styles.css" />
     <link rel="stylesheet" href="widgets/tracktatus/assets/tractatus-tree.css" />
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" href="widgets/vtasks/assets/styles.css" />
+    <link rel="stylesheet" href="widgets/vcontext/assets/styles.css" />
+    <link rel="stylesheet" href="assets/styles.css" />
   </head>
   
   <body>
 
+    
 
     <div id="app" >
 
-      <div class="container" @mousemove="mouseMove($event)" @mouseup="moveEnd">
 
+      
+      <div id="vdesk"
+           class="container"
+           ref="container"
+           @mousemove="mouseMove($event)"
+           @mouseup="moveEnd"
+           @contextmenu="rightClickMenu($event)"
+           @click="simpleClick($event)" >
+
+        <holder ref="holder" class="holder"></holder>
+
+        <vcontext ref="vcontext" id="vcontext"></vcontext>
         
         <div class="box">
           <div class="page-head">  
@@ -49,20 +64,33 @@
           </div>
         </div>
 
-        <div class="widget">
-            <tracktatus class="tlp-widget" ref="tbox" v-on:move-start="moveStart" />
-          </div>
+        
+        <tracktatus ref="tbox"
+                    task-id="tbox"
+                    v-on:move-start="moveStart"
+                    v-on:minimize-window="minimizeWindow"></tracktatus>
 
+        
+
+
+        
       </div>
+
+      
 
     </div>
 
-    <script src="widgets/tracktatus/main.js"></script>
+    <script src="./main.js"></script>
+    <script src="./widgets/vtasks/components/holder.js"></script>
+    <script src="./widgets/tracktatus/components/tracktatus.js"></script>
+    <script src="./widgets/vcontext/vcontext.js"></script>
 
-    <script src="widgets/tracktatus/components/tracktatus.js"></script> 
-    
     <script>
       
+      // controller.mount('#controller')
+
+      // vtasks.mount('#vtasks')
+
       app.mount('#app')
 
       

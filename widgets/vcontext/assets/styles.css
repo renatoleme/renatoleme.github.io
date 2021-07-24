@@ -1,0 +1,29 @@
+.context-enter-active {
+    animation-duration: 0.3s;
+    animation-name: grow;
+}
+
+.menu-header {
+    padding: 8px;
+    display: flex;
+    flex-direction: row
+}
+      
+@keyframes grow {
+    from {
+        transform: scale(0,0);
+        opacity: 0.1;
+        transform-origin: top left;
+
+    }
+          
+    to {
+        transform: scale(1,1);
+       transform-origin: top left;
+        opacity: 1;
+    }
+}
+
+.btn-program:hover {
+    opacity: 0.5;
+}
