@@ -4,10 +4,18 @@ const app = Vue.createApp({
             movingWindowRef: '',
             isWindowMoving: false,
             diffX: 0,
-            diffY: 0
+            diffY: 0,
+            tbox: ['tbox1']
         }
     },
     methods: {
+        removeTask(taskId) {
+            const index = this.tbox.indexOf(taskId)
+            this.tbox.splice(index, 1)
+        },
+        createTask(task) {
+            this.tbox.push(task + (this.tbox.length + 1))
+        },
         minimizeWindow(trigger) {
             this.$refs.holder.pushTask(trigger)
         },
@@ -30,8 +38,6 @@ const app = Vue.createApp({
             this.movingWindowRef = info.ref
         },
         simpleClick(event) {
-            console.log(event.target.children)
-
             if (event.target.id !== 'vcontext') {
                 this.$refs['vcontext'].closeMenu(event)
             }

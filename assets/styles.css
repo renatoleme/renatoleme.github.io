@@ -52,11 +52,7 @@ body {
     display: flex;
     justify-content: flex-end;
 }
-.fas:active {
-    transform: rotate(360deg);
-    transition-duration: 0.5s;
-    transition-property: transform;
-}
+
 .btn {
     padding: 4px;
 }

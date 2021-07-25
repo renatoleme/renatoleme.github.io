@@ -4,6 +4,7 @@ app.component('vcontext', {
             visible: false,
             programList: [{
                 name: 'Tracktatus.js',
+                ref: 'tbox'
             }],
             contextMenuStyle: {
                 background: 'rgb(0,0,0)',
@@ -12,7 +13,6 @@ app.component('vcontext', {
                 color: 'white',
                 width: '200px',
                 height: 'fit-content',
-                padding: '4px',
                 marginTop: 200,
                 marginLeft: 200,
                 position: 'absolute',
@@ -20,14 +20,6 @@ app.component('vcontext', {
             },
             listStyle: {
                 color: 'transparent'
-            },
-            buttonStyle: {
-                border: 'none',
-                background: 'linear-gradient(276deg, rgba(85,85,85,1) 3%, rgba(16,16,16,1) 100%, rgba(65,65,65,1) 100%)',
-                color: 'white',
-                width: '100%',
-                padding: '12px',
-                cursor: 'pointer'
             }
         }
     },
@@ -35,14 +27,14 @@ app.component('vcontext', {
     `<transition name="context">
 <div v-if="visible" :style="contextMenuStyle" id="vcontext">
 
-<div class="menu-header" id="vcontext"> <i class="fas fa-bars" id="vcontext"></i>  &nbsp;&nbsp; <i id="vcontext"> Applications Menu </i></div>
+<div class="menu-header" id="vcontext"> <i class="fas fa-bars" id="vcontext"></i>  &nbsp;&nbsp; <i id="vcontext"> Launch Application </i></div>
 
 
 <div class="program-list" id="vcontext">
 <li v-for="(program, index) in programList" :style="listStyle" id="vcontext">
 <ul id="vcontext">
 <div id="vcontext">
-<button class="btn-program" :style="buttonStyle" v-on:click="openProgram(index)" >{{ program.name }}</button>
+<button class="btn-program" v-on:click="openProgram(index)" >{{ program.name }}</button>
 </div>
 </ul>
 </li>
@@ -51,7 +43,7 @@ app.component('vcontext', {
 </div></transition>`,
     methods: {
         openProgram(index) {
-            alert('Check-out the development of this website in: https://github.com/renatoleme/renatoleme.github.io')
+            this.$emit('open-program', this.programList[index].ref)
         },
         closeMenu(event) {
             this.visible = false

@@ -13,15 +13,8 @@
     <link rel="stylesheet" href="widgets/vcontext/assets/styles.css" />
     <link rel="stylesheet" href="assets/styles.css" />
   </head>
-  
   <body>
-
-    
-
     <div id="app" >
-
-
-      
       <div id="vdesk"
            class="container"
            ref="container"
@@ -31,8 +24,9 @@
            @click="simpleClick($event)" >
 
         <holder ref="holder" class="holder"></holder>
-
-        <vcontext ref="vcontext" id="vcontext"></vcontext>
+        <vcontext ref="vcontext"
+                  id="vcontext"
+                  v-on:open-program="createTask"></vcontext>
         
         <div class="box">
           <div class="page-head">  
@@ -50,7 +44,6 @@
             </center>
             <br/><br/>
           </div>
-          
           <div class="content">
             <h2> About me </h2>
             <p>
@@ -64,20 +57,18 @@
           </div>
         </div>
 
-        
-        <tracktatus ref="tbox"
-                    task-id="tbox"
-                    v-on:move-start="moveStart"
-                    v-on:minimize-window="minimizeWindow"></tracktatus>
-
-        
-
-
+        <div>
+          <tracktatus
+            v-for="(tlp, index) in tbox"
+            :key="tlp"
+            :ref="tlp"
+            :task-id="tlp"
+            v-on:move-start="moveStart"
+            v-on:minimize-window="minimizeWindow"
+            v-on:close-window="removeTask" />
+        </div>
         
       </div>
-
-      
-
     </div>
 
     <script src="./main.js"></script>
@@ -86,14 +77,7 @@
     <script src="./widgets/vcontext/vcontext.js"></script>
 
     <script>
-      
-      // controller.mount('#controller')
-
-      // vtasks.mount('#vtasks')
-
       app.mount('#app')
-
-      
     </script>
     
   </body>
