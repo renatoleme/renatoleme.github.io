@@ -4,3 +4,6 @@
 [submodule "widgets/vtasks"]
 	path = widgets/vtasks
 	url = https://github.com/renatoleme/vtasks.git
+[submodule "widgets/vblog"]
+	path = widgets/vblog
+	url = https://github.com/renatoleme/vblog.git

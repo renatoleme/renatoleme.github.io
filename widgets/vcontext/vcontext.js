@@ -2,10 +2,16 @@ app.component('vcontext', {
     data() {
         return {
             visible: false,
-            programList: [{
-                name: 'Tracktatus.js',
-                ref: 'tbox'
-            }],
+            programList: [
+                {
+                    name: 'Tracktatus.js',
+                    ref: 'tbox'
+                },
+                {
+                    name: 'v-Blog',
+                    ref: 'vblog'
+                }
+            ],
             contextMenuStyle: {
                 background: 'rgb(0,0,0)',
                 background: 'linear-gradient(276deg, rgba(85,85,85,1) 3%, rgba(16,16,16,1) 100%, rgba(65,65,65,1) 100%)',
