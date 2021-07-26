@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="widgets/tracktatus/assets/tractatus-tree.css" />
     <link rel="stylesheet" href="widgets/vtasks/assets/styles.css" />
     <link rel="stylesheet" href="widgets/vcontext/assets/styles.css" />
+    <link rel="stylesheet" href="widgets/vblog/assets/styles.css" />
     <link rel="stylesheet" href="assets/styles.css" />
   </head>
   <body>
@@ -57,15 +58,31 @@
           </div>
         </div>
 
+
+
         <div>
           <tracktatus
-            v-for="(tlp, index) in tbox"
-            :key="tlp"
-            :ref="tlp"
-            :task-id="tlp"
+            v-for="(item, index) in tasks.tbox"
+            :key="item"
+            :ref="item"
+            :task-id="item"
             v-on:move-start="moveStart"
             v-on:minimize-window="minimizeWindow"
             v-on:close-window="removeTask" />
+        </div>
+
+
+
+        <div>
+          <vblog
+            v-for="(item, index) in tasks.vblog"
+            :key="item"
+            :ref="item"
+            :task-id="item"
+            v-on:move-start="moveStart"
+            v-on:minimize-window="minimizeWindow"
+            v-on:close-window="removeTask"
+            />
         </div>
         
       </div>
@@ -75,6 +92,7 @@
     <script src="./widgets/vtasks/components/holder.js"></script>
     <script src="./widgets/tracktatus/components/tracktatus.js"></script>
     <script src="./widgets/vcontext/vcontext.js"></script>
+    <script src="./widgets/vblog/vblog.js"></script>
 
     <script>
       app.mount('#app')

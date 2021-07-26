@@ -5,16 +5,21 @@ const app = Vue.createApp({
             isWindowMoving: false,
             diffX: 0,
             diffY: 0,
-            tbox: ['tbox1']
+            tasks: {
+                tbox: [],
+                vblog: ['vblog1']
+            }
         }
     },
     methods: {
-        removeTask(taskId) {
-            const index = this.tbox.indexOf(taskId)
-            this.tbox.splice(index, 1)
+        removeTask(info) {
+            console.log(info)
+            const index = this.tasks[info.ref].indexOf(info.taskId)
+            this.tasks[info.ref].splice(index, 1)
         },
         createTask(task) {
-            this.tbox.push(task + (this.tbox.length + 1))
+            console.log(task)
+            this.tasks[task].push(task + (this.tasks[task].length + 1))
         },
         minimizeWindow(trigger) {
             this.$refs.holder.pushTask(trigger)
@@ -36,6 +41,8 @@ const app = Vue.createApp({
             this.diffY = info.diffY;
             this.isWindowMoving = true
             this.movingWindowRef = info.ref
+
+            console.log(info)
         },
         simpleClick(event) {
             if (event.target.id !== 'vcontext') {
