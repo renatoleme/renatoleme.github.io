@@ -66,6 +66,7 @@
             :key="item"
             :ref="item"
             :task-id="item"
+            :z-index="topWindow"
             v-on:move-start="moveStart"
             v-on:minimize-window="minimizeWindow"
             v-on:close-window="removeTask" />
@@ -79,6 +80,7 @@
             :key="item"
             :ref="item"
             :task-id="item"
+            :z-index="topWindow"
             v-on:move-start="moveStart"
             v-on:minimize-window="minimizeWindow"
             v-on:close-window="removeTask"

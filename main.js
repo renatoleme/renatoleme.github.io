@@ -1,6 +1,7 @@
 const app = Vue.createApp({
     data() {
         return {
+            topWindow: 1,
             movingWindowRef: '',
             isWindowMoving: false,
             diffX: 0,
@@ -18,8 +19,9 @@ const app = Vue.createApp({
             this.tasks[info.ref].splice(index, 1)
         },
         createTask(task) {
-            console.log(task)
-            this.tasks[task].push(task + (this.tasks[task].length + 1))
+            const taskName = task + (this.tasks[task].length + 1)
+            this.tasks[task].push(taskName)
+            this.topWindow = this.topWindow + 1
         },
         minimizeWindow(trigger) {
             this.$refs.holder.pushTask(trigger)
@@ -36,13 +38,19 @@ const app = Vue.createApp({
                 this.$refs['vcontext'].closeMenu(event)
             }
         },
+        putWindowOnTop(ref) {
+            this.topWindow = this.topWindow + 1
+            this.$refs[ref].changeZIndex (this.topWindow)  
+        },
         moveStart(info) {
             this.diffX = info.diffX;
             this.diffY = info.diffY;
             this.isWindowMoving = true
             this.movingWindowRef = info.ref
 
-            console.log(info)
+            console.log(this.movingWindowRef)
+            this.putWindowOnTop(this.movingWindowRef)          
+
         },
         simpleClick(event) {
             if (event.target.id !== 'vcontext') {
