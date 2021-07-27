@@ -82,6 +82,7 @@
             :task-id="item.id"
             :z-index="topWindow"
             :maximized="item.maximized"
+            :minimized="item.minimized"
             v-on:move-start="moveStart"
             v-on:minimize-window="minimizeWindow"
             v-on:close-window="removeTask"

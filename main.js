@@ -8,7 +8,7 @@ const app = Vue.createApp({
             diffY: 0,
             tasks: {
                 tbox: [{id: 'tbox1', maximized: true, minimized: true}],
-                vblog: [{id: 'vblog1', maximized: true, minimized: false}]
+                vblog: [{id: 'vblog1', maximized: true, minimized: true}]
             }
         }
     },
