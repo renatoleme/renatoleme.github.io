@@ -23,12 +23,10 @@
            @mouseup="moveEnd"
            @contextmenu="rightClickMenu($event)"
            @click="simpleClick($event)" >
-
         <holder ref="holder" class="holder"></holder>
         <vcontext ref="vcontext"
                   id="vcontext"
                   v-on:open-program="createTask"></vcontext>
-        
         <div class="box">
           <div class="page-head">  
             <div class="selectors">
@@ -57,9 +55,6 @@
             </p>
           </div>
         </div>
-
-
-
         <div>
           <tracktatus
             v-for="(item, index) in tasks.tbox"
@@ -71,9 +66,6 @@
             v-on:minimize-window="minimizeWindow"
             v-on:close-window="removeTask" />
         </div>
-
-
-
         <div>
           <vblog
             v-for="(item, index) in tasks.vblog"
@@ -86,7 +78,6 @@
             v-on:close-window="removeTask"
             />
         </div>
-        
       </div>
     </div>
 
@@ -99,6 +90,5 @@
     <script>
       app.mount('#app')
     </script>
-    
   </body>
 </html>
