@@ -7,20 +7,25 @@ const app = Vue.createApp({
             diffX: 0,
             diffY: 0,
             tasks: {
-                tbox: [],
-                vblog: ['vblog1']
+                tbox: [{id: 'tbox1', maximized: true, minimized: true}],
+                vblog: [{id: 'vblog1', maximized: true, minimized: false}]
             }
         }
     },
     methods: {
         removeTask(info) {
-            console.log(info)
             const index = this.tasks[info.ref].indexOf(info.taskId)
-            this.tasks[info.ref].splice(index, 1)
+            const newTasks = this.tasks[info.ref].filter(task => task.id !== info.taskId)
+            this.tasks[info.ref] = newTasks
         },
         createTask(task) {
             const taskName = task + (this.tasks[task].length + 1)
-            this.tasks[task].push(taskName)
+            const newTask = {
+                id: taskName,
+                maximized: false,
+                minimized: false
+            }
+            this.tasks[task].push(newTask)
             this.topWindow = this.topWindow + 1
         },
         minimizeWindow(trigger) {
@@ -42,13 +47,14 @@ const app = Vue.createApp({
             this.topWindow = this.topWindow + 1
             this.$refs[ref].changeZIndex (this.topWindow)  
         },
+        focusOnWindow(info) {
+            this.putWindowOnTop(info.ref)
+        },
         moveStart(info) {
             this.diffX = info.diffX;
             this.diffY = info.diffY;
             this.isWindowMoving = true
             this.movingWindowRef = info.ref
-
-            console.log(this.movingWindowRef)
             this.putWindowOnTop(this.movingWindowRef)          
 
         },

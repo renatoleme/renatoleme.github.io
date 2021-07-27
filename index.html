@@ -5,7 +5,9 @@
     <meta name="description" content="Estudante de Doutorado no IFCH/CLE (Unicamp). ">
     <meta name="author" content="Renato Leme">
     <script src="https://unpkg.com/vue@next"></script>
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Noto+Sans:wght@400;700&family=Open+Sans:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="widgets/tracktatus/assets/styles.css" />
     <link rel="stylesheet" href="widgets/tracktatus/assets/tractatus-tree.css" />
@@ -23,10 +25,14 @@
            @mouseup="moveEnd"
            @contextmenu="rightClickMenu($event)"
            @click="simpleClick($event)" >
-        <holder ref="holder" class="holder"></holder>
-        <vcontext ref="vcontext"
-                  id="vcontext"
-                  v-on:open-program="createTask"></vcontext>
+        <holder
+          ref="holder"
+          class="holder"
+          v-on:set-focus="focusOnWindow"></holder>
+        <vcontext
+          ref="vcontext"
+          id="vcontext"
+          v-on:open-program="createTask"></vcontext>
         <div class="box">
           <div class="page-head">  
             <div class="selectors">
@@ -58,24 +64,28 @@
         <div>
           <tracktatus
             v-for="(item, index) in tasks.tbox"
-            :key="item"
-            :ref="item"
-            :task-id="item"
-            :z-index="topWindow"
-            v-on:move-start="moveStart"
-            v-on:minimize-window="minimizeWindow"
-            v-on:close-window="removeTask" />
-        </div>
-        <div>
-          <vblog
-            v-for="(item, index) in tasks.vblog"
-            :key="item"
-            :ref="item"
-            :task-id="item"
+            :key="item.id"
+            :ref="item.id"
+            :task-id="item.id"
+            :minimized="item.minimized"
             :z-index="topWindow"
             v-on:move-start="moveStart"
             v-on:minimize-window="minimizeWindow"
             v-on:close-window="removeTask"
+            v-on:set-focus="focusOnWindow" />
+        </div>
+        <div>
+          <vblog
+            v-for="(item, index) in tasks.vblog"
+            :key="item.id"
+            :ref="item.id"
+            :task-id="item.id"
+            :z-index="topWindow"
+            :maximized="item.maximized"
+            v-on:move-start="moveStart"
+            v-on:minimize-window="minimizeWindow"
+            v-on:close-window="removeTask"
+            v-on:set-focus="focusOnWindow"
             />
         </div>
       </div>
