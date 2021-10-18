@@ -22,6 +22,11 @@
 
 
 
+        <script type="module">
+         import { LaTeXJSComponent } from "https://cdn.jsdelivr.net/npm/latex.js/dist/latex.mjs"
+         customElements.define("latex-js", LaTeXJSComponent)
+        </script>
+        
         <style>
          latex-js {
              display: inline-block;
@@ -118,10 +123,6 @@
         <script src="./widgets/vblog/vblog.js"></script>
 
         
-        <script type="module">
-         import { LaTeXJSComponent } from "https://cdn.jsdelivr.net/npm/latex.js/dist/latex.mjs"
-         customElements.define("latex-js", LaTeXJSComponent)
-        </script>
 
         <script>
          app.mount('#app')
