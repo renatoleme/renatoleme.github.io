@@ -21,17 +21,12 @@
         <link rel="stylesheet" href="assets/styles.css" />
 
 
-        <script type="module">
-         import { LaTeXJSComponent } from "https://cdn.jsdelivr.net/npm/latex.js/dist/latex.mjs"
-         customElements.define("latex-js", LaTeXJSComponent)
-        </script>
 
         <style>
          latex-js {
              display: inline-block;
              width: 100%;
              border: none;
-             font-size: x-large;
              margin-right: 0;
          }
         </style>
@@ -121,6 +116,12 @@
         <script src="./widgets/tracktatus/components/tracktatus.js"></script>
         <script src="./widgets/vcontext/vcontext.js"></script>
         <script src="./widgets/vblog/vblog.js"></script>
+
+        
+        <script type="module">
+         import { LaTeXJSComponent } from "https://cdn.jsdelivr.net/npm/latex.js/dist/latex.mjs"
+         customElements.define("latex-js", LaTeXJSComponent)
+        </script>
 
         <script>
          app.mount('#app')
