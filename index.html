@@ -1,105 +1,129 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Renato Leme</title>
-    <meta name="description" content="Estudante de Doutorado no IFCH/CLE (Unicamp). ">
-    <meta name="author" content="Renato Leme">
-    <script src="https://unpkg.com/vue@next"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Noto+Sans:wght@400;700&family=Open+Sans:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <link rel="stylesheet" href="widgets/tracktatus/assets/styles.css" />
-    <link rel="stylesheet" href="widgets/tracktatus/assets/tractatus-tree.css" />
-    <link rel="stylesheet" href="widgets/vtasks/assets/styles.css" />
-    <link rel="stylesheet" href="widgets/vcontext/assets/styles.css" />
-    <link rel="stylesheet" href="widgets/vblog/assets/styles.css" />
-    <link rel="stylesheet" href="assets/styles.css" />
-  </head>
-  <body>
-    <div id="app" >
-      <div id="vdesk"
-           class="container"
-           ref="container"
-           @mousemove="mouseMove($event)"
-           @mouseup="moveEnd"
-           @contextmenu="rightClickMenu($event)"
-           @click="simpleClick($event)" >
-        <holder
-          ref="holder"
-          class="holder"
-          v-on:set-focus="focusOnWindow"></holder>
-        <vcontext
-          ref="vcontext"
-          id="vcontext"
-          v-on:open-program="createTask"></vcontext>
-        <div class="box">
-          <div class="page-head">  
-            <div class="selectors">
-              <a href="https://github.com/renatoleme" class="social"><i class="btn fab fa-github fa-2x"></i></a>
-            </div>
-            <div class="name">
-              <center>
-                <img class="avatar" src="img/eu.jpg" />
-                <h1>Renato Leme</h1>
-              </center>
-            </div>
-            <center>
-              <i>Philosopher && Programmer</i>
-            </center>
-            <br/><br/>
-          </div>
-          <div class="content">
-            <h2> About me </h2>
-            <p>
-              I love machines and I like to philosophize about them.
-              Currently I'm pursuing my PhD at <a href="https://www.ifch.unicamp.br/ifch/pos/filosofia">Unicamp (IFCH/CLE)</a> [Campinas, Brazil]
-              in the area of Logics, with a research project on diagrammatic reasoning.
-              
-              <br /> <br />
-              You can contact me via rntreisleme [at] gmail.com .
-            </p>
-          </div>
-        </div>
-        <div>
-          <tracktatus
-            v-for="(item, index) in tasks.tbox"
-            :key="item.id"
-            :ref="item.id"
-            :task-id="item.id"
-            :minimized="item.minimized"
-            :z-index="topWindow"
-            v-on:move-start="moveStart"
-            v-on:minimize-window="minimizeWindow"
-            v-on:close-window="removeTask"
-            v-on:set-focus="focusOnWindow" />
-        </div>
-        <div>
-          <vblog
-            v-for="(item, index) in tasks.vblog"
-            :key="item.id"
-            :ref="item.id"
-            :task-id="item.id"
-            :z-index="topWindow"
-            :maximized="item.maximized"
-            :minimized="item.minimized"
-            v-on:move-start="moveStart"
-            v-on:minimize-window="minimizeWindow"
-            v-on:close-window="removeTask"
-            v-on:set-focus="focusOnWindow"
-            />
-        </div>
-      </div>
-    </div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta http-equiv="content-language" content="en">
 
-    <script src="./main.js"></script>
-    <script src="./widgets/vtasks/components/holder.js"></script>
-    <script src="./widgets/tracktatus/components/tracktatus.js"></script>
-    <script src="./widgets/vcontext/vcontext.js"></script>
-    <script src="./widgets/vblog/vblog.js"></script>
+        <title>Renato Leme</title>
+        <meta name="description" content="Estudante de Doutorado no IFCH/CLE (Unicamp). ">
+        <meta name="author" content="Renato Leme">
+        <script src="https://unpkg.com/vue@next"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Noto+Sans:wght@400;700&family=Open+Sans:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="widgets/tracktatus/assets/styles.css" />
+        <link rel="stylesheet" href="widgets/tracktatus/assets/tractatus-tree.css" />
+        <link rel="stylesheet" href="widgets/vtasks/assets/styles.css" />
+        <link rel="stylesheet" href="widgets/vcontext/assets/styles.css" />
+        <link rel="stylesheet" href="widgets/vblog/assets/styles.css" />
+        <link rel="stylesheet" href="assets/styles.css" />
 
-    <script>
-      app.mount('#app')
-    </script>
-  </body>
+
+        <script type="module">
+         import { LaTeXJSComponent } from "https://cdn.jsdelivr.net/npm/latex.js/dist/latex.mjs"
+         customElements.define("latex-js", LaTeXJSComponent)
+        </script>
+
+        <style>
+         latex-js {
+             display: inline-block;
+             width: 100%;
+             border: none;
+             font-size: x-large;
+             margin-right: 0;
+         }
+        </style>
+
+        
+    </head>
+    <body>
+        <div id="app" >
+            <div id="vdesk"
+                 class="container"
+                 ref="container"
+                 @mousemove="mouseMove($event)"
+                 @mouseup="moveEnd"
+                 @contextmenu="rightClickMenu($event)"
+                 @click="simpleClick($event)" >
+                <holder
+                    ref="holder"
+                    class="holder"
+                    v-on:set-focus="focusOnWindow"></holder>
+                <vcontext
+                    ref="vcontext"
+                    id="vcontext"
+                    v-on:open-program="createTask"></vcontext>
+                <div class="box">
+                    <div class="page-head">  
+                        <div class="selectors">
+                            <a href="https://github.com/renatoleme" class="social"><i class="btn fab fa-github fa-2x"></i></a>
+                        </div>
+                        <div class="name">
+                            <center>
+                                <img class="avatar" src="img/eu.jpg" />
+                                <h1>Renato Leme</h1>
+                            </center>
+                        </div>
+                        <center>
+                            <i>Philosopher && Programmer</i>
+                        </center>
+                        <br/><br/>
+                    </div>
+                    <div class="content">
+                        <h2> About me </h2>
+                        <p>
+                            I love machines and I like to philosophize about them.
+                            Currently I'm pursuing my PhD at <a href="https://www.ifch.unicamp.br/ifch/pos/filosofia">Unicamp (IFCH/CLE)</a> [Campinas, Brazil]
+                            in the area of Logics, with a research project on diagrammatic reasoning.
+                            
+                            <br /> <br />
+                            You can contact me via rntreisleme [at] gmail.com .
+
+                            
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <tracktatus
+                        v-for="(item, index) in tasks.tbox"
+                        :key="item.id"
+                        :ref="item.id"
+                        :task-id="item.id"
+                        :minimized="item.minimized"
+                        :z-index="topWindow"
+                        v-on:move-start="moveStart"
+                        v-on:minimize-window="minimizeWindow"
+                        v-on:close-window="removeTask"
+                        v-on:set-focus="focusOnWindow" />
+                </div>
+                <div>
+                    <vblog
+                        v-for="(item, index) in tasks.vblog"
+                        :key="item.id"
+                        :ref="item.id"
+                        :task-id="item.id"
+                        :z-index="topWindow"
+                        :maximized="item.maximized"
+                        :minimized="item.minimized"
+                        v-on:move-start="moveStart"
+                        v-on:minimize-window="minimizeWindow"
+                        v-on:close-window="removeTask"
+                        v-on:set-focus="focusOnWindow"
+                    />
+                </div>
+            </div>
+        </div>
+
+        <script src="./main.js"></script>
+        <script src="./widgets/vtasks/components/holder.js"></script>
+        <script src="./widgets/tracktatus/components/tracktatus.js"></script>
+        <script src="./widgets/vcontext/vcontext.js"></script>
+        <script src="./widgets/vblog/vblog.js"></script>
+
+        <script>
+         app.mount('#app')
+        </script>
+    </body>
 </html>

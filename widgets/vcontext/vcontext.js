@@ -19,8 +19,8 @@ app.component('vcontext', {
                 color: 'white',
                 width: '200px',
                 height: 'fit-content',
-                marginTop: 200,
-                marginLeft: 200,
+                marginTop: '200px',
+                marginLeft: '200px',
                 position: 'absolute',
                 zIndex: 9999
             },
@@ -55,8 +55,8 @@ app.component('vcontext', {
             this.visible = false
         },
         openMenu(event) {
-            this.contextMenuStyle.marginTop = event.clientY
-            this.contextMenuStyle.marginLeft = event.clientX
+            this.contextMenuStyle.marginTop = event.clientY + 'px'
+            this.contextMenuStyle.marginLeft = event.clientX + 'px'
             this.visible = true
         }
     }
