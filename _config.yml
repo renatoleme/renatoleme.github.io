@@ -1,0 +1,31 @@
+title: "renatoleme.github.com"
+tagline: "Logic, philosophy, programming"
+description: "Logic, philosophy and programming."
+github_username: renatoleme
+twitter_username: renatorleme
+baseurl: "/"
+url: "https://renatoleme.github.io"
+
+plugins:
+  - jemoji
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+sass:
+  style: compressed
+
+highlighter: rouge
+
+header_pages:
+  - index.md
+  - blog.md
+
+# set the size of the text to 'large' or 'small', default is small
+font-size: large
+
+markdown: kramdown
+
+kramdown:
+  math_engine: mathjax
+  syntax_highlighter: rouge
+  parse_block_html: false
