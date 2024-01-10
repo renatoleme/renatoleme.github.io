@@ -21,7 +21,7 @@ alt="avatar" />
 <p>
 I am a PhD student in Philosophy at the University of Campinas (UNICAMP/IFCH). My areas of interest includes type theory, interactive provers (Coq mostly) and diagrammatic reasoning.
 
-You can contact me via rntreisleme [at] gmail.com .
+You can contact me via rntreisleme [at] gmail [dot] com
 </p>
 </div>
 
