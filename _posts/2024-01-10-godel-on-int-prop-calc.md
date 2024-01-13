@@ -67,7 +67,7 @@ As a consequence of this lemma, we can conclude, for instance, that in the usual
 
 <figure>
 <p align="center" width="100%">
-    <img width="33%" src="media/godel1932.png">
+    <img width="50%" src="/assets/godel1932.png">
   </p>
   <figcaption align="center">Figure 1. Sn illustrated.</figcaption>
 </figure>
