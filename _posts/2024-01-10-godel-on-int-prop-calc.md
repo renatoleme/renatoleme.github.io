@@ -10,11 +10,11 @@ summary:
 
 # Introduction
 
-In 1932, Gödel published a brief note showing that the intuitionistic propositional calculus (IPC) cannot be characterized by finite-valued semantics [[1]](#references). Although the argument he employed was brilliant, it was presented in an extremely concise manner (merely two paragraphs!), making it challenging to comprehend. In the subsequent discussion, I will endeavor to present it in a more detailed fashion, addressing any gaps with additional or alternative definitions and arguments. Following Gödel's lead, we will denote the intuitionistic propositional calculus as $$\textbf{H}$$.
+In 1932, Gödel published a brief note showing that the intuitionistic propositional calculus (IPC) cannot be characterized by finite-valued semantics [[1]](#references). Although the argument he employed was brilliant, it was presented in an extremely concise manner (merely two paragraphs!), making it challenging to comprehend. In the subsequent discussion, I will endeavor to present it in a more detailed fashion, addressing any gaps with additional or alternative definitions and arguments. Following Gödel's lead, we will denote the intuitionistic propositional calculus as $\textbf{H}$.
 
 # The strategy
 
-Suppose there is a matrix for $$\mathcal{L}$$ which validates those, and only those, formulas that are provable in $$\textbf{H}$$. More formally, we are interested in a finite-valued matrix $$\mathcal{M}$$ such that,
+Suppose there is a matrix for $\mathcal{L}$ which validates those, and only those, formulas that are provable in $\textbf{H}$. More formally, we are interested in a finite-valued matrix $\mathcal{M}$ such that,
 
 $$ \forall \varphi \in \mathcal{L}, \mathcal{M} \Vdash \varphi \iff \textbf{H} \vdash \varphi $$
 
