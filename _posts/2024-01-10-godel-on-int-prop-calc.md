@@ -78,6 +78,7 @@ The idea is: given any index $n > 1$, we can construct a Heyting algebra, called
 
 > (**$S_n$**) Given some $n > 1$, define the universe of the algebra as $\{ 1, 2, \ldots, n \}$, which are ordered in the usual way, and set the designated value as $1$. Now, define the operators as: 
 
+
 | Operators | 
 |- |
 | $a \lor b = min(a,b)$ |
@@ -96,8 +97,11 @@ The idea is: given any index $n > 1$, we can construct a Heyting algebra, called
 We will provide an alternative definition of $F_n$, called as recursive $F_n$ (or $rF_n$), which will be useful to prove the next lemma.
 
 > (**$rF_n$**) Given $n > 1$, let $rF_n$ be the formula defined as follows:
-$$rF_2 = p_1 \leftrightarrow p_2\\
-rF_{n+1} = rF_n \lor \bigvee_{1\leq i < n} (p_i \leftrightarrow p_{n+1})$$
+
+| Recursive $F_n$ |
+| - |
+| $rF_2 = p_1 \leftrightarrow p_2$ |
+| $rF_{n+1} = rF_n \lor \bigvee_{1\leq i < n} (p_i \leftrightarrow p_{n+1})$ |
 
 The following is straightforward:
 
