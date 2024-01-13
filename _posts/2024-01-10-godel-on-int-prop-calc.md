@@ -1,6 +1,6 @@
 ---
 layout: post
-title: On the intuitionistic propositional calculus
+title: On a note by Gödel
 date: 2024-01-10 14:45
 category: logic
 author: Renato Leme
@@ -77,10 +77,14 @@ As a consequence of this lemma, we can conclude, for instance, that in the usual
 The idea is: given any index $n > 1$, we can construct a Heyting algebra, called $S_n$, on which there is a valuation, called the *canonical valuation* $h$, where $h(F_n) \not \in \mathcal{D}$.
 
 > (**$S_n$**) Given some $n > 1$, define the universe of the algebra as $\{ 1, 2, \ldots, n \}$, which are ordered in the usual way, and set the designated value as $1$. Now, define the operators as: 
-$$a \lor b = min(a,b) \\ a \land b = max(a,b) \\
-a \to b = 1 \text{ for } a \geq b \text{ and }a \to b = b \text{ for } a < b\\
-\neg a = n \text{ for } a \neq n \text{ and } \neg n = 1
-$$
+
+| Operators | 
+|- |
+| $a \lor b = min(a,b)$ |
+| $a \land b = max(a,b)$ |
+| $a \to b = 1 \text{ for } a \geq b \text{ and }a \to b = b \text{ for } a < b$ |
+| $\neg a = n \text{ for } a \neq n \text{ and } \neg n = 1$ |
+
 
 > (**Remark**) To reconstruct the argument using the same algebra as provided by Gödel, we will subtract $\leftrightarrow$ from our language and redefine $\varphi \leftrightarrow \psi$ as a notation for $(\varphi \to \psi) \land (\psi \to \varphi)$.
 
