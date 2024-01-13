@@ -111,7 +111,10 @@ Now, using this new definition of $F_n$, we can easily prove the following lemma
 
 > **Lemma 2** For every $n > 1$, $h(rF_n) = 2$.
 
-> **Proof** Induction on $n$. (**Base case**) By definition of $h$, $h(p_1) = 1$ and $h(p_2) = 2$. Therefore, $h(p_1 \leftrightarrow p_2) = max(h(p_1 \to p_2), h(p_2 \to p_1)) = max(2,1) = 2$. (**Inductive step**) Assume that $h(rF_n) = 2$. By definition of $rF_{n+1}$, $h(rF_{n+1}) = min(h(rF_n), h(\bigvee_{1\leq i < n} (p_i \leftrightarrow p_{n+1}))) = min(2,h(\bigvee_{1\leq i < n} (p_i \leftrightarrow p_{n+1})))$ (**A**). Note that, for every $i$, $i < n$. Therefore, $h(p_i) < h(p_{n+1})$. By definition of $h$, $h(p_i \leftrightarrow p_{n+1}) = max(h(p_i \to p_{n+1}), h(p_{n+1} \to p_i)) = max(n+1,1) = n+1$. Therefore, $h(\bigvee_{1\leq i < n} (p_i \leftrightarrow p_{n+1})) = n+1$. Using (**A**), we get that $h(rF_{n+1}) = min(2,n+1) = 2$.
+> **Proof** Induction on $n$. 
+>> (**Base case**) By definition of $h$, $h(p_1) = 1$ and $h(p_2) = 2$. Therefore, $h(p_1 \leftrightarrow p_2) = max(h(p_1 \to p_2), h(p_2 \to p_1)) = max(2,1) = 2$.
+>
+>>(**Inductive step**) Assume that $h(rF_n) = 2$. By definition of $rF_{n+1}$, $h(rF_{n+1}) = min(h(rF_n), h(\bigvee_{1\leq i < n} (p_i \leftrightarrow p_{n+1}))) = min(2,h(\bigvee_{1\leq i < n} (p_i \leftrightarrow p_{n+1})))$ (**A**). Note that, for every $i$, $i < n$. Therefore, $h(p_i) < h(p_{n+1})$. By definition of $h$, $h(p_i \leftrightarrow p_{n+1}) = max(h(p_i \to p_{n+1}), h(p_{n+1} \to p_i)) = max(n+1,1) = n+1$. Therefore, $h(\bigvee_{1\leq i < n} (p_i \leftrightarrow p_{n+1})) = n+1$. Using (**A**), we get that $h(rF_{n+1}) = min(2,n+1) = 2$.
 
 From this lemma, we can conclude that, for every $n > 1$, $h(rF_n) \neq 1$. Therefore, $h(rF_n) \not \in \mathcal{D}$. Using the Proposition above with Lemma 2, we get:
 
