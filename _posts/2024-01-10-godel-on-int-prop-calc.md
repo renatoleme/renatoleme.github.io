@@ -50,11 +50,11 @@ $$F_n = \bigvee_{1\leq i < k \leq n} (p_i \leftrightarrow p_k)$$
 
 where $p_i$ and $p_k$ are propositional letters. Here are some examples.
 
-| n | $F_n$ | 
-|- | - |
-| 2 | $p_1 \leftrightarrow p_2$ | 
-| 3 | $(p_1 \leftrightarrow p_2) \lor (p_1 \leftrightarrow p_3) \lor (p_2 \leftrightarrow p_3)$ | 
-| 4 | $(p_1 \leftrightarrow p_2) \lor (p_1 \leftrightarrow p_3) \lor (p_1 \leftrightarrow p_4) \lor (p_2 \leftrightarrow p_3) \lor (p_2 \leftrightarrow p_4) \lor (p_3 \leftrightarrow p_4)$ |
+| n |  | $F_n$ | 
+|- | - | - |
+| **2** | | $p_1 \leftrightarrow p_2$ | 
+| **3** | | $(p_1 \leftrightarrow p_2) \lor (p_1 \leftrightarrow p_3) \lor (p_2 \leftrightarrow p_3)$ | 
+| **4** | | $(p_1 \leftrightarrow p_2) \lor (p_1 \leftrightarrow p_3) \lor (p_1 \leftrightarrow p_4) \lor (p_2 \leftrightarrow p_3) \lor (p_2 \leftrightarrow p_4) \lor (p_3 \leftrightarrow p_4)$ |
 
 > **Lemma 1** Let $n \geq 1$. For every n-valued matrix $\mathcal{M}$ such that $\mathcal{M} \Vdash (p \leftrightarrow p) \lor q$, we have that $\mathcal{M} \Vdash F_{n+1}$.
 
