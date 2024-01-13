@@ -10,11 +10,11 @@ summary:
 
 # Introduction
 
-In 1932, Gödel published a brief note showing that the intuitionistic propositional calculus (IPC) cannot be characterized by finite-valued semantics [[1]](#references). Although the argument he employed was brilliant, it was presented in an extremely concise manner (merely two paragraphs!), making it challenging to comprehend. In the subsequent discussion, I will endeavor to present it in a more detailed fashion, addressing any gaps with additional or alternative definitions and arguments. Following Gödel's lead, we will denote the intuitionistic propositional calculus as $\textbf{H}$.
+In 1932, Gödel published a brief note showing that the intuitionistic propositional calculus (IPC) cannot be characterized by finite-valued semantics [[1]](#references). Although the argument he employed was brilliant, it was presented in an extremely concise manner (merely two paragraphs!), making it challenging to comprehend. In the subsequent discussion, I will endeavor to present it in a more detailed fashion, addressing any gaps with additional or alternative definitions and arguments. Following Gödel's lead, we will denote the intuitionistic propositional calculus as \(\textbf{H}\).
 
 # The strategy
 
-Suppose there is a matrix for $\mathcal{L}$ which validates those, and only those, formulas that are provable in $\textbf{H}$. More formally, we are interested in a finite-valued matrix $\mathcal{M}$ such that,
+Suppose there is a matrix for $\mathcal{L}$ which validates those, and only those, formulas that are provable in \(\textbf{H}\). More formally, we are interested in a finite-valued matrix \(\mathcal{M}\) such that,
 
 $$ \forall \varphi \in \mathcal{L}, \mathcal{M} \Vdash \varphi \iff \textbf{H} \vdash \varphi $$
 
@@ -22,9 +22,9 @@ The right-to-left direction ("those") is trivial: just take the usual matrix for
 
 $$\neg \exists \varphi \in \mathcal{L}, \mathcal{M} \Vdash \varphi \land \textbf{H} \nvdash \varphi$$
 
-Therefore, if we find a formula $\varphi$ valid in $\mathcal{M}$ and show that this formula is not provable in $\textbf{H}$, we are forced to reject $\mathcal{M}$ as an adequate characterization of $\textbf{H}$. The strategy of Gödel's argument will be to show that, given any finite-valued matrix strong enough to validate every formula provable in $\textbf{H}$, this matrix will necessarily validate also a formula not provable in $\textbf{H}$, implying that no finite-valued matrix can satisfy only the formulas provable in intuitionistic propositional calculus.
+Therefore, if we find a formula \(\varphi\) valid in \(\mathcal{M}\) and show that this formula is not provable in \(\textbf{H}\), we are forced to reject \(\mathcal{M}\) as an adequate characterization of \(\textbf{H}\). The strategy of Gödel's argument will be to show that, given any finite-valued matrix strong enough to validate every formula provable in \(\textbf{H}\), this matrix will necessarily validate also a formula not provable in \(\textbf{H}\), implying that no finite-valued matrix can satisfy only the formulas provable in intuitionistic propositional calculus.
 
-In what follows, we will show that, for every $n > 1$, 
+In what follows, we will show that, for every \(n > 1\), 
 
 1. [$F_{n+1}$ is valid in any appropriate $n$-valued matrix;](#step1)
 2. [$F_n$ is not intuitionistically valid.](#step2)
@@ -37,7 +37,7 @@ In what follows, we will show that, for every $n > 1$,
 
 > (**Matrix**) A matrix for $\mathcal{L}$ is a tuple $\mathcal{M} = \langle \mathcal{V}, \mathcal{D}, \mathcal{O} \rangle$ where $\langle  \mathcal{V}, \mathcal{O} \rangle$ is an algebra for $\mathcal{L}$ and $\mathcal{D} \subset \mathcal{V}$ is the set of designated values.
 
-> (**Valuation function**) Given a matrix $\mathcal{M} = \langle \mathcal{V}, \mathcal{D}, \mathcal{O} \rangle$, a valuation in $\mathcal{M}$ is a function $v : \mathcal{L} \rightarrow \mathcal{V}$ such that, for every $n$-ary connective $\circ$ and every $\alpha_1,\ldots,\alpha_n \in \mathcal{L}$,
+> (**Valuation function**) Given a matrix $\mathcal{M} = \langle \mathcal{V}, \mathcal{D}, \mathcal{O} \rangle$, a valuation in \(\mathcal{M}\) is a function $v : \mathcal{L} \rightarrow \mathcal{V}$ such that, for every $n$-ary connective $\circ$ and every $\alpha_1,\ldots,\alpha_n \in \mathcal{L}$,
 >$$v (\circ(\alpha_1, \ldots, \alpha_n)) = \tilde \circ (v(\alpha_1),\ldots,v(\alpha_n))$$ where $\tilde \circ \in \mathcal{O}$ is the algebraic counterpart of the connective.
 
 > (**Valid formula**) We say that a formula $\varphi \in \mathcal{L}$ is valid in a matrix $\mathcal{M} = \langle \mathcal{V}, \mathcal{D}, \mathcal{O} \rangle$ if, and only if, for every valuation function $v$, $v(\varphi) \in \mathcal{D}$. We will denote this as $\mathcal{M} \Vdash \varphi$.
@@ -56,9 +56,9 @@ where $p_i$ and $p_k$ are propositional letters. Here are some examples.
 | 3 | $(p_1 \leftrightarrow p_2) \lor (p_1 \leftrightarrow p_3) \lor (p_2 \leftrightarrow p_3)$ | 
 | 4 | $(p_1 \leftrightarrow p_2) \lor (p_1 \leftrightarrow p_3) \lor (p_1 \leftrightarrow p_4) \lor (p_2 \leftrightarrow p_3) \lor (p_2 \leftrightarrow p_4) \lor (p_3 \leftrightarrow p_4)$ |
 
-> **Lemma 1** Let $n \geq 1$. For every n-valued matrix $\mathcal{M}$ such that $\mathcal{M} \Vdash (p \leftrightarrow p) \lor q$, we have that $\mathcal{M} \Vdash F_{n+1}$.
+> **Lemma 1** Let $n \geq 1$. For every n-valued matrix \(\mathcal{M}\) such that $\mathcal{M} \Vdash (p \leftrightarrow p) \lor q$, we have that $\mathcal{M} \Vdash F_{n+1}$.
 
-> **Proof** Let $\mathcal{M} = \langle \mathcal{V}, \mathcal{D}, \mathcal{O} \rangle$, where $\mathcal{V} = \{ 1, 2, \ldots, n \}$, be a matrix. By definition, a valuation in $\mathcal{M}$ is a function $v : \mathcal{L} \to \mathcal{V}$. Assume that $\mathcal{D} \subset V$ is the set of designated values. We want to show that, for every $v$, $v(F_{n+1}) \in \mathcal{D}$. Let $v'$ be a valuation function. Now, note that $F_{n+1}$ have $n+1$ propositional letters and, by hypothesis, we have only $n$ truth-values. By the **pigeonhole principle**, we are forced to conclude that there are at least two propositional letters, say $p_i$ and $p_j$, such that $v'(p_i) = v'(p_j)$ (**A**). Now, let us rearrange the expression in the following way: $F_{n+1} = (p_i \leftrightarrow p_j) \lor \varphi$ and let $\beta = (p \leftrightarrow p) \lor q$. By hypothesis, for every valuation $v$ in $\mathcal{M}$, $v(\beta) \in \mathcal{D}$. In particular, $v'(\beta) \in \mathcal{D}$. By uniform substitution, $v'(\beta[p_i / p, \varphi / q]) \in \mathcal{D}$ (**B**). Now, by definition of valuation function, 
+> **Proof** Let $\mathcal{M} = \langle \mathcal{V}, \mathcal{D}, \mathcal{O} \rangle$, where $\mathcal{V} = \{ 1, 2, \ldots, n \}$, be a matrix. By definition, a valuation in \(\mathcal{M}\) is a function $v : \mathcal{L} \to \mathcal{V}$. Assume that $\mathcal{D} \subset V$ is the set of designated values. We want to show that, for every $v$, $v(F_{n+1}) \in \mathcal{D}$. Let $v'$ be a valuation function. Now, note that $F_{n+1}$ have $n+1$ propositional letters and, by hypothesis, we have only $n$ truth-values. By the **pigeonhole principle**, we are forced to conclude that there are at least two propositional letters, say $p_i$ and $p_j$, such that $v'(p_i) = v'(p_j)$ (**A**). Now, let us rearrange the expression in the following way: $F_{n+1} = (p_i \leftrightarrow p_j) \lor \varphi$ and let $\beta = (p \leftrightarrow p) \lor q$. By hypothesis, for every valuation $v$ in \(\mathcal{M}\), $v(\beta) \in \mathcal{D}$. In particular, $v'(\beta) \in \mathcal{D}$. By uniform substitution, $v'(\beta[p_i / p, \varphi / q]) \in \mathcal{D}$ (**B**). Now, by definition of valuation function, 
 $$v'(F_{n+1}) = \tilde \lor (\tilde \leftrightarrow(v'(p_i),v'(p_j)),v'(\varphi))$$ Using (**A**) and (**B**), we conclude that $v'(F_{n+1}) \in \mathcal{D}$, as desired.
 
 As a consequence of this lemma, we can conclude, for instance, that in the usual $2$-valued matrix for classical logic, the formula $(p \leftrightarrow q) \lor (p \leftrightarrow r) \lor (q \leftrightarrow r)$ is valid. More generally, every $F_n$ with $n \geq 3$ is true in classical logic. As a consequence of the next lemma, we will conclude that the same is not the case on IPC.
