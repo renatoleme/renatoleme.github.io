@@ -2,7 +2,7 @@ title: "renatoleme.github.com"
 tagline: "Logic, philosophy, programming"
 description: "Logic, philosophy and programming."
 github_username: renatoleme
-twitter_username: renatorleme
+twitter_username:
 baseurl: "/"
 url: "https://renatoleme.github.io"
 
