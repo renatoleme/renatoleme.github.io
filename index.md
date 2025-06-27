@@ -13,19 +13,15 @@ title: home
 class="avatar"
 src="assets/avatar.png" 
 alt="avatar" />
-
-
-
 <div>
 
 <h1> About me </h1>
 
 <p>
-I am a PhD student in Philosophy, with an emphasis in Logic, at the University of Campinas (UNICAMP). I am primarily interested in semantics for non-classical logic, with a particular focus on the implementation of logical systems. Currently, I'm working with restricted non-deterministic matrices for intuitionistic and modal logic.
-
+I am a PhD student in Philosophy, with an emphasis in Logic, at the University of Campinas (UNICAMP) in Campinas, Brazil. I am primarily interested in semantics for non-classical logics, with a particular focus on the implementation of logical systems. Currently, I'm working with restricted non-deterministic matrices for intuitionistic and modal logic.
+</p>
 
 <h2> Publications </h2>
-
 <ol>
     <li>Leme, R., Olarte, C., Pimentel, E., & Coniglio, M. E. (2025). The Modal Cube Revisited: Semantics without Worlds. arXiv preprint arXiv:2505.12824.</li>
     <li>Leme, R., Coniglio, M., & Lopes, B. (2023). Intuitionism with Truth Tables: A Decision Procedure for IPL Based on RNmatrices. arXiv preprint arXiv:2308.13664.</li>
@@ -40,7 +36,6 @@ I am a PhD student in Philosophy, with an emphasis in Logic, at the University o
 </li>
 </ol>
 
-</p>
 </div>
 
 </div>
