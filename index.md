@@ -14,6 +14,8 @@ class="avatar"
 src="assets/avatar.png" 
 alt="avatar" />
 
+
+
 <div>
 
 <h1> About me </h1>
