@@ -32,7 +32,7 @@ I am a PhD student in Philosophy, with an emphasis in Logic, at the University o
 
 <ol>
 <li>
- <a url="https://github.com/nmatrices/nmatrix-generator">nmatrix-generator</a> A tool for producing truth tables for modal logics <b>K</b> and its extensions with <b>D</b>, <b>T</b>, <b>B</b>, <b>4</b> and <b>5</b> based on Kearns' level valuations.
+ [nmatrix-generator](https://github.com/nmatrices/nmatrix-generator) A tool for producing truth tables for modal logics <b>K</b> and its extensions with <b>D</b>, <b>T</b>, <b>B</b>, <b>4</b> and <b>5</b> based on Kearns' level valuations.
 </li>
 </ol>
 
