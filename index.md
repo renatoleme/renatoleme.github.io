@@ -18,7 +18,7 @@ alt="avatar" />
 <h1> About me </h1>
 
 <p>
-I am a PhD student in Philosophy, with an emphasis in Logic, at the University of Campinas (UNICAMP) in Campinas, Brazil. I am primarily interested in semantics for non-classical logics, with a particular focus on the implementation of logical systems. Currently, I'm working with restricted non-deterministic matrices for intuitionistic and modal logics.
+I am a PhD student in Philosophy, with an emphasis in Logic, at the University of Campinas (UNICAMP) in Campinas, Brazil. I am primarily interested in semantics for non-classical logics, with a particular focus on the implementation of logical systems. Currently, I'm working with restricted non-deterministic matrices for intuitionistic and modal logics in a project supported by FAPESP (grant n. 21/01025-3).
 </p>
 
 <h2> Publications </h2>
